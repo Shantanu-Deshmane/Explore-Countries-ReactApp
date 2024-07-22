@@ -16,8 +16,9 @@ const [dark, setDark] = mode
                 <p className='text-2xl font-bold'> Explore the World !</p>
                 <p className='cursor-pointer' onClick={() => {
                   setDark(!dark)
+                  localStorage.setItem("isDark", !dark)
                 }}> 
-                <i><i className={`fa-regular fa-${dark ? 'moon' : 'sun'} pr-1`}></i></i> {dark ? "Dark Mode" : "Light Mode"}</p>
+                <i><i className={`fa-regular fa-${dark ? 'sun' : 'moon'} pr-1`}></i></i> {dark ? "Light Mode" : "Dark Mode"}</p>
             </div>
     </>
   )
