@@ -7,7 +7,7 @@ function CardShimmerEffect() {
         <>
             <div className='flex flex-wrap justify-evenly'>
                 {
-                    //created array of 10 and filled it with 1 to apply map() method
+                //created array of 10 and filled it with 1 to apply map() method
                     new Array(10).fill(1).map((e, i) => {
                         return (
                             <div key={i} className='w-[250px] mx-4 mt-10 text-sm bg-slate-200 rounded-lg overflow-hidden shadow-sm'>
