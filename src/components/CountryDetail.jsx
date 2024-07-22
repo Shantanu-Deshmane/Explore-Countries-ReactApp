@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 function CountryDetail() {
     const countryName = new URLSearchParams(location.search).get('name')
 
-    const [countryData, setCountryData] = useState({})
+    const [countryData, setCountryData] = useState({});
+
 
     useEffect(()=>{
         fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
@@ -19,17 +20,18 @@ function CountryDetail() {
                 nativeName:Object.values(data.name.nativeName)[0].common,
                 currencies:Object.values(data.currencies)[0].name,
                 languages:Object.values(data.languages).join(", "),
-
+                
             })
         })
-    
     },[])
+    
+    if (!countryData) return <h2>Loading data....</h2>
     return (
         <>
             <div className=''>
-                <span >
+                <button onClick={() => history.back()} >
                     <i className='fa-solid fa-arrow-left mt-5 px-4  cursor-pointer bg-white mx-8 py-2 lowercase text-sm'>&nbsp; <span className='lowercase'>back</span></i>
-                </span>
+                </button>
 
                 <div className='flex justify-center'>
                     <div className='flex w-[800px] mt-20 px-4  items-center'>

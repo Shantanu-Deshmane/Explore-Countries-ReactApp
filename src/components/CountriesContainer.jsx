@@ -13,6 +13,7 @@ function CountriesContainer({query}) {
     })
   },[])
 
+  
 return (
   <>
   <div className='flex flex-wrap justify-evenly'>
